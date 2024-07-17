@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Problem Statement</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="text"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    textarea {
+        height: 120px;
+    }
+    input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 12px 20px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Create Problem Statement</h2>
+    <form id="problemstatementcreator">
+        <label for="Organization">Organization:</label>
+        <input type="text" id="Organization" name="Organization" required>
+
+        <label for="Problem Statement">Problem Statement:</label>
+        <textarea id="Problem Statement" name="Problem Statement" required></textarea>
+
+        <label for="Category">Category:</label>
+        <textarea id="Category" name="Category" required></textarea>
+
+        <label for="Problem Statement Number">Problem Statement Number:</label>
+        <textarea id="Problem Statement Number" name="Problem Statement Number" required></textarea>
+
+        <label for="Domain">Domain:</label>
+        <textarea id="Domain" name="Domain" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<script>
+    document.getElementById('problemstatementcreator').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        const formValues = {};
+        formData.forEach((value, key) => formValues[key] = value);
+
+        // Retrieve existing problem statements from local storage
+        let problemStatements = JSON.parse(localStorage.getItem('problemStatements')) || [];
+        
+        // Add the new problem statement
+        problemStatements.push(formValues);
+        
+        // Save back to local storage
+        localStorage.setItem('problemStatements', JSON.stringify(problemStatements));
+
+        // Redirect to the problem statement page
+        window.location.href = "problemstatement.html";
+    });
+</script>
+</body>
+</html>

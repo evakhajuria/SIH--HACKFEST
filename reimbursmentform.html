@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reimbursement Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Reimbursement Form</h2>
+    <form id="reimbursement-form" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="Ticket Details">Ticket Details:</label>
+            <input type="text" id="Ticket Details" name="Ticket Details" required>
+        </div>
+        <div class="form-group">
+            <label for="Fare Details">Fare Details (In Total):</label>
+            <input type="Fare Details" id="Fare Details" name="Fare Details" required>
+        </div>
+        <div class="form-group">
+            <label for="receipt">Receipt (PDF or Image):</label>
+            <input type="file" id="receipt" name="receipt" accept=".pdf, .jpg, .jpeg, .png" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('reimbursement-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        const formValues = {};
+        formData.forEach((value, key) => formValues[key] = value);
+        console.log(formValues);
+        window.location.href = "dashboard.html";
+        // Here you can handle form submission, such as sending data to a server
+    });
+</script>
+</body>
+</html>

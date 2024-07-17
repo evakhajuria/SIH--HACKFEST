@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nodal Center Preference Submission</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 12px 20px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    .nodal-center-details {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        display: none;
+    }
+    .nodal-center-details h3 {
+        margin-top: 0;
+    }
+</style>
+<script>
+    function showNodalCenterDetails() {
+        var form = document.getElementById("nodalCenterForm");
+        var selectedCenter = form.elements["nodalCenter"].value;
+        var detailsContainer = document.getElementById("nodalCenterDetails-" + selectedCenter);
+        
+        // Hide all details containers
+        var allContainers = document.querySelectorAll(".nodal-center-details");
+        for (var i = 0; i < allContainers.length; i++) {
+            allContainers[i].style.display = "none";
+        }
+        
+        // Show the details container for the selected center
+        if (detailsContainer) {
+            detailsContainer.style.display = "block";
+        }
+        window.location.href = "dashboard.html";
+    }
+</script>
+</head>
+<body>
+<div class="container">
+    <h2>Nodal Center Preference Submission</h2>
+    <form id="nodalCenterForm" action="#" method="post" onsubmit="showNodalCenterDetails(); return false;">
+        <label for="nodalCenter">Select Nodal Center Preference:</label>
+        <select id="nodalCenter" name="nodalCenter">
+            <option value="center1">Nodal Center 1</option>
+            <option value="center2">Nodal Center 2</option>
+            <option value="center3">Nodal Center 3</option>
+            <option value="center4">Nodal Center 4</option>
+            <option value="center5">Nodal Center 5</option>
+            <option value="center6">Nodal Center 6</option>
+            <option value="center7">Nodal Center 7</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <div class="nodal-center-details" id="nodalCenterDetails-center1">
+        <h3>Nodal Center 1 Details</h3>
+        <p>Location: ABC Street, XYZ City</p>
+        <p>Contact Person: John Doe</p>
+        <p>Contact Email: john@example.com</p>
+        <p>Contact Phone: +1234567890</p>
+    </div>
+
+    <div class="nodal-center-details" id="nodalCenterDetails-center2">
+        <h3>Nodal Center 2 Details</h3>
+        <p>Location: DEF Street, XYZ City</p>
+        <p>Contact Person: Jane Smith</p>
+        <p>Contact Email: jane@example.com</p>
+        <p>Contact Phone: +0987654321</p>
+    </div>
+
+    <div class="nodal-center-details" id="nodalCenterDetails-center3">
+        <h3>Nodal Center 3 Details</h3>
+        <p>Location: GHI Street, XYZ City</p>
+        <p>Contact Person: Mike Johnson</p>
+        <p>Contact Email: mike@example.com</p>
+        <p>Contact Phone: +9876543210</p>
+    </div>
+    <div class="nodal-center-details" id="nodalCenterDetails-center4">
+        <h3>Nodal Center 4 Details</h3>
+        <p>Location: GHI Street, XYZ City</p>
+        <p>Contact Person: Mike Johnson</p>
+        <p>Contact Email: mike@example.com</p>
+        <p>Contact Phone: +9876543210</p>
+    </div>
+    <div class="nodal-center-details" id="nodalCenterDetails-center5">
+        <h3>Nodal Center 5 Details</h3>
+        <p>Location: GHI Street, XYZ City</p>
+        <p>Contact Person: Mike Johnson</p>
+        <p>Contact Email: mike@example.com</p>
+        <p>Contact Phone: +9876543210</p>
+    </div>
+    <div class="nodal-center-details" id="nodalCenterDetails-center6">
+        <h3>Nodal Center 6 Details</h3>
+        <p>Location: GHI Street, XYZ City</p>
+        <p>Contact Person: Mike Johnson</p>
+        <p>Contact Email: mike@example.com</p>
+        <p>Contact Phone: +9876543210</p>
+    </div>
+    <div class="nodal-center-details" id="nodalCenterDetails-center7">
+        <h3>Nodal Center 7 Details</h3>
+        <p>Location: GHI Street, XYZ City</p>
+        <p>Contact Person: Mike Johnson</p>
+        <p>Contact Email: mike@example.com</p>
+        <p>Contact Phone: +9876543210</p>
+    </div>
+    <!-- Add more nodal center details divs as needed -->
+</div>
+</body>
+</html>

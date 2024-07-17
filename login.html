@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Register</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<style>
+  iframe.goog-te-banner-frame {
+    display: none;
+  }
+  .goog-te-gadget-simple {
+    border: 0px;
+    background: transparent;
+  }
+  .goog-te-gadget-icon {
+    display: none;
+  }
+  .goog-te-gadget-simple .VIpgJd-ZVi9od-xl07Ob-lTBxed span {
+    text-decoration: none;
+    color: azure;
+  }
+  .goog-te-gadget-simple {
+    background-color: transparent !important;
+    border: none !important;
+    font-size: 10pt;
+    display: inline-block;
+    padding-top: 1px;
+    padding-bottom: 2px;
+    cursor: pointer;
+  }
+  .goog-te-gadget-simple .VIpgJd-ZVi9od-xl07Ob-lTBxed span {
+    text-decoration: none;
+    color: azure !important;
+  }
+</style>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'hi',
+      includedLanguages: 'en,hi,mr,bn,bh,gu,ks,ml,ne,te,ur,kn,sd,sa,pa,as',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+
+  function roleSelector() {
+    var selectedRole = document.getElementById("role").value;
+    localStorage.setItem("selectedRole", selectedRole);
+  }
+
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    var selectedRole = document.getElementById("role").value;
+    var rolePages = {
+      "team_lead": "dashboard.html",
+      "spoc": "spocform.html",
+      "problem_creator": "problemstatementcreator.html",
+      "challenger": "challenger.html"
+    };
+    if (selectedRole in rolePages) {
+      window.location.href = rolePages[selectedRole];
+    } else {
+      alert("Please select a valid role.");
+    }
+  }
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<body>
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="logo">
+        <h1><a href="/"><img src="assets/img/SIH2022-white-logo.png" alt="" srcset=""></a></h1>
+      </div>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="index.html#services">About Us</a></li>
+              <li><a href="index.html#portfolio">Previous Editions</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Ideas</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="theme.html">Theme Template</a></li>
+              <li><a href="problemstatement.html">Problem Statement</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Results</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="results_junior.html">Junior</a></li>
+              <li><a href="results_senior.html">Senior</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>More</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="processflow.html">Process flow</a></li>
+              <li><a href="rewards.html">Rewards & Benefits</a></li>
+              <li><a href="index.html#faq">FAQ's</a></li>
+            </ul>
+          </li>
+          <li class="nav-link scrollto"><a href="#" id="google_translate_element"></a></li>
+          <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="login.html">Login/Register</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Welcome to Hackfest</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>LOGIN</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="inner-page">
+      <div class="container col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title col-lg-12">Login</h5>
+            <br>
+
+            <form onsubmit="handleFormSubmit(event)">
+              <div class="row mb-3">
+                <div class="col-sm-10">
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                  </div>
+                  <div class="col-mb-3">
+                    <label class="col-sm-2 col-form-label">Role</label>
+                    <select id="role" onchange="roleSelector()" name="role" required>
+                      <option value="">Select Role</option>
+                      <option value="team_lead">Team Lead</option>
+                      <option value="spoc">School/College SPOC's</option>
+                      <option value="problem_creator">Problem Statement Creator</option>
+                      <option value="challenger">Challenger</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Login</button>
+                <a href="register.html" class="btn btn-secondary">Register</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-6 text-lg-left text-center">
+          <div class="copyright">
+            &copy; Copyright <strong>Hackfest- Just Do It.</strong> All Rights Reserved
